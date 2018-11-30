@@ -1,0 +1,22 @@
+---
+student_list:
+- !ruby/object:Student
+  name: Diego
+  email: dtabares@gmail.com
+  address: Julio Perdiguero
+  site: Catalinas
+- !ruby/object:Student
+  name: Ivan
+  email: ivankuzel@gmail.com
+  address: Julio Perdiguero
+  site: Catalinas
+- !ruby/object:Student
+  name: Nico
+  email: nappe@ar.ibm.com
+  address: Av Siempre viva 12345
+  site: Martinez
+- !ruby/object:Student
+  name: Martin Canteros
+  email: canteros@ar.ibm.com
+  address: Santa Fe 1471 6C
+  site: Martinez

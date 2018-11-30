@@ -1,0 +1,47 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Obras List</h5>
+    <p class="card-text">Obras</p>
+    <% if @errors %>
+      <% @errors.each do |error| %>
+        <div class="alert alert-danger" role="alert">
+          <%= error%>
+        </div>
+      <% end %>
+    <% end %>
+    <% if @success_delete %>
+      <div class="alert alert-success">
+        Student successfully deleted
+      </div>
+    <% end %>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Email</th>
+          <th scope="col">Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Site</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @obras_list.each do |obra| %>
+          <tr>
+            <td><%= obra.id %></td>
+            <td><%= obra.nombre %></td>
+            <td><%= obra.tipo %></td>
+            <td><%= obra.comuna %></td>
+            <td>
+              <form action="/obras/<%= obra.id %>" method="post">
+                <input type='hidden' name='_method' value='DELETE'/>
+                <button type='submit' class='btn btn-danger'>Delete</button>
+              </form>
+              <a class='btn btn-primary' href="/student/<%= obra.id %>">Edit</a>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <a class="btn btn-success" href="/">Home</a>
+  </div>
+</div>

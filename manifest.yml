@@ -1,0 +1,8 @@
+---
+  applications:
+  - name: quecomemoshoy
+    memory: 128M
+    instances: 1
+    buildpack: ruby_buildpack
+    #command: bundle exec ruby vote_app.rb
+    command: bundle exec rackup config.ru -p $PORT
